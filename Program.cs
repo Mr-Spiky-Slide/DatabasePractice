@@ -25,6 +25,7 @@ do
 
     if (mainChoice == "1")
     {
+      
         var db = new BloggingContext();
         var query = db.Blogs.OrderBy(b => b.BlogId);
 
@@ -35,6 +36,7 @@ do
         {
             Console.WriteLine($"{item.BlogId}. {item.Name}");
         }
+       
     }
     else if (mainChoice == "2")
     {
@@ -67,6 +69,7 @@ do
     }
     else if (mainChoice == "3")
     {
+        try{
         var db = new BloggingContext();
         var query = db.Blogs.OrderBy(b => b.BlogId);
         var post = new Post();
@@ -97,9 +100,14 @@ do
 
         //confirmation message
         Console.WriteLine("Post added successfully");
+        }
+        catch(Exception e){
+            logger.Error(e);
+        }
     }
     else if (mainChoice == "4")
     {
+        try{
         var db = new BloggingContext();
         var blogQuery = db.Blogs.OrderBy(b => b.BlogId);
         int blogChoice;
@@ -124,7 +132,10 @@ do
         foreach (var item in postQuery){
             Console.WriteLine($"Blog: {item.Blog.Name} Post Title: {item.Title} \n {item.Content}");
         }
-
+        }
+        catch(Exception e){
+            logger.Error(e);
+        }
 
     }
 
