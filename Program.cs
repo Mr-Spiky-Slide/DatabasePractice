@@ -80,7 +80,7 @@ do
             Console.WriteLine("Choose a blog to post to:");
             foreach (var item in query)
             {
-                Console.WriteLine($"{item.BlogId}. {item.Name}");
+                Console.WriteLine($"{item.BlogId}. {item.Name} ");
             }
 
             //get the choice from the user
@@ -130,7 +130,7 @@ do
         var postQuery = db.Posts.Where(p => p.BlogId == blogChoice).OrderBy(p => p.Title);
         Console.WriteLine($"There are {postQuery.Count()} post(s) in this blog");
         foreach (var item in postQuery){
-            Console.WriteLine($"Blog: {item.Blog.Name} Post Title: {item.Title} \n {item.Content}");
+            Console.WriteLine($"Blog: {item.Blog.Name} Post Title: {item.Title} \n {item.Content} \n");
         }
         }
         catch(Exception e){
