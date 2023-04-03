@@ -54,7 +54,7 @@ do
             logger.Info("Blog added - {name}", name);
 
             // Display all Blogs from the database
-            var query = db.Blogs.OrderBy(b => b.Name);
+            var query = db.Blogs.OrderBy(b => b.BlogId);
 
             Console.WriteLine("All blogs in the database:");
             foreach (var item in query)
