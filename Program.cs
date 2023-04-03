@@ -120,6 +120,7 @@ do
         } while (!blogQuery.Any(b => b.BlogId == blogChoice));
 
         var postQuery = db.Posts.Where(p => p.BlogId == blogChoice).OrderBy(p => p.Title);
+        Console.WriteLine($"There are {postQuery.Count()} post(s) in this blog");
         foreach (var item in postQuery){
             Console.WriteLine($"Blog: {item.Blog.Name} Post Title: {item.Title} \n {item.Content}");
         }
