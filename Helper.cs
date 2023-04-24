@@ -3,7 +3,7 @@ namespace Helper;
 
 public class blogData
 {
-    public string displayBlogs(BloggingContext data)
+    public void displayBlogs(BloggingContext data)
     {
 
         var query = data.Blogs.OrderBy(b => b.BlogId);
@@ -12,8 +12,8 @@ public class blogData
         //TODO: Make it not in reverse
         foreach (var item in query)
         {
-            Console.WriteLine($"{item.BlogId}. {item.Name}");
+            Console.WriteLine($"{item.BlogId}. {item.BlogId}");
         }
-        return "";
+        
     }
 }
